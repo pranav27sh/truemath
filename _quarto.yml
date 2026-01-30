@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    "assets"
   output-dir: docs
 
 website:
@@ -75,7 +77,7 @@ callouty-theorem:
       type: note
       appearance: minimal
 
-  
+site-url: "https://pranav27sh.github.io/truemath"
 
 
 

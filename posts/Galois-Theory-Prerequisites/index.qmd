@@ -12,7 +12,7 @@ format:
     fontsize: "1.1em" 
     other-links:
       - text: View page as PDF
-        href: /assets/galoisTheoryPDFCopy.pdf
+        href: "../../assets/galoisTheoryPDFCopy.pdf"
   # pdf: 
   #   number-sections: true
   #   number-depth: 1
