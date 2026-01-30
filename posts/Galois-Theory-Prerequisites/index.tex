@@ -1,0 +1,592 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{1}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{plain}
+\newtheorem{corollary}{Corollary}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Proof}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\newtheorem{refremark}{Remark}[section]
+\newtheorem{refsolution}{Solution}[section]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Galois Theory - Prerequisites},
+  pdfauthor={Pranav Shukla},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Galois Theory - Prerequisites}
+\author{Pranav Shukla}
+\date{2026-01-22}
+
+\begin{document}
+\maketitle
+
+
+\section*{Introduction}\label{introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Hello everyone. I have recently decided to start with Galois Theory in
+view of my long term goal of studying Algebraic Number Theory. Now maybe
+I am being a bit desperate here since for Galois Theory one also needs a
+good understanding of field theory which for me, is a bit rusty at the
+moment. I have taken a course in introductory abstract algebra at my
+university in my previous semester (IIIrd sem), which was fairly basic,
+was taught upto ring theory, also excluding some important portions of
+group and ring theory. The book that was followed was Gallian. My goal
+in this post is to revise (and record) the key results, theorems and
+ideas in ring and field theory especially, which will be of prime
+importance for starting with Galois Theory. This will be just a
+collection of theorems and results and I would not include proofs of
+them here (maybe will add them gradually in the future), as it takes
+much more time. Also, not having the proofs written down will allow me
+to try and recall the proof strategy each time I will have to convince
+myself of the theorem, improving my understanding of the proof in the
+process.
+
+\paragraph*{The Plan}\label{the-plan}
+\addcontentsline{toc}{paragraph}{The Plan}
+
+My plan is that for the revision upto field theory, I will be following
+Gallian. After reaching there, I will switch to Dummit and Foote for the
+Galois Theory itself. I have also enrolled in the NPTEL course for
+Galois Theory this sem, which is being taught by Prof.~Krishna
+Hanumanthu and I will be following that course closely too (Link of the
+playlist
+\href{https://youtube.com/playlist?list=PLyqSpQzTE6M94LuHxxu4OrViX4K45oH73&si=-fRFCp29_IdCycR3}{here}).
+Pretty excited for what lies ahead!
+
+\begin{itemize}
+\tightlist
+\item
+  Edit: A minor change in the plan. Will be studying field theory mainly
+  from Dummit and Foote. Target day for completion of field theory:
+  \textbf{3rd of Febraury}
+\end{itemize}
+
+\section{RING THEORY}\label{ring-theory}
+
+\subsubsection*{Factorization of
+Polynomials}\label{factorization-of-polynomials}
+\addcontentsline{toc}{subsubsection}{Factorization of Polynomials}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{definition}[Irreducible
+element]\protect\hypertarget{def-irreducible}{}\label{def-irreducible}
+
+~
+
+\begin{itemize}
+\item
+  \textbf{In Integral Domains:} Let \(D\) be an integral domain. A
+  polynomial \(f(x)\) from \(D[x]\) which is a non zero and non unit in
+  \(D[x]\) is said to be \textbf{irreducible} \emph{over} \(D\) if
+  \(f(x) = g(x)h(x)\), where \(g(x) \; and \; h(x)\) are in \(D[x]\)
+  implies that either \(g(x) \; or \; f(x)\) is a unit. A non-zero non
+  unit polynomial in \(D[x]\) is said to be reducible if it is not
+  irreducible over \(D[x]\).
+\item
+  \textbf{In Fields:} Let \(F\) be a field. Then \(f(x)\), a non-zero
+  non unit element in \(F[x]\), is irreducible over \(F\) if there exist
+  \(g(x) \; and \; h(x)\) in \(F[x]\) such that \(f(x) = g(x)h(x)\)
+  implies that \(deg\;h(x) < deg\;f(x) \; and\; deg\;g(x) < deg\;f(x)\).
+\end{itemize}
+
+\end{definition}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{remark}
+\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  Irreducibility is a property of the polynomial as well as the integral
+  domain or the field being considered.
+\item
+  One can check that the defintion of irreducibility in a field is
+  equivalent to that in an integral domain.
+\end{itemize}
+
+\end{remark}
+
+\end{tcolorbox}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{definition}[Content of a polynomial, Primitive
+polynomial]\protect\hypertarget{def-default}{}\label{def-default}
+
+\begin{itemize}
+\item
+  \textbf{Content of a polynomial:} The content of a polynomial
+  \(a_nx^n+a_{n-1}x^{n-1} + \cdots + a_0\) is
+  \(gcd(a_n,a_{n-1},\cdots, a_0)\).
+\item
+  \textbf{Primitive polynomial} A primitive polynnomial is an element of
+  \(Z[x]\) with content \(1\).
+\end{itemize}
+
+\end{definition}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[Reducibility tests for degree 2 and
+3]\protect\hypertarget{thm-irreducibilityDegTwoThree}{}\label{thm-irreducibilityDegTwoThree}
+
+Let \(F\) be a field. If \(f(x) \in F[x]\) and \(deg\;f(x)\) is 2 or 3,
+then \(f(x)\) is irreducible over \(F\) iff it has a zero in \(F\).
+
+\end{theorem}
+
+\end{tcolorbox}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[Eisenstein's Criterion
+1850]\protect\hypertarget{thm-eisensteinsCriterion}{}\label{thm-eisensteinsCriterion}
+
+\hfill\break
+
+Let \[f(x) = a_nx^n+a_{n-1}x^{n-1} + \cdots + a_0 ∈ Z[x]\]. If there is
+a prime \(p\) such that \(p∤a_n, p|a_i,\cdots,p| a_0\) and
+\(p^2\nmid a_0\), then \(f(x)\) is irreducible over \(Q\).
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{corollary}[Irreducibility of pth Cyclotomic
+Polynomial]\protect\hypertarget{cor-IrreducibiltyCyclotomic}{}\label{cor-IrreducibiltyCyclotomic}
+
+~
+
+For any prime \(p\), the pth cyclotomic polynomial
+\[\Phi_{p}(x) = \frac{x^p-1}{p-1} = x^p + x^{p-1} + \cdots + 1\] ir
+irreducible over \(Q\).
+
+\end{corollary}
+
+\end{tcolorbox}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[\(⟨p(x)\rangle\) maximal iff \(p(x)\) is
+irreducible]\protect\hypertarget{thm-maximaliffIrreducible}{}\label{thm-maximaliffIrreducible}
+
+~
+
+Let \(F\) be a field and let \(p(x) \in F[x]\). Then p(x) is irreducible
+over \(F\) iff \(⟨p(x)\rangle\) is maximal over \(F\).
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{corollary}[F{[}x{]}/\textless p(x)\textgreater{} is a
+Field]\protect\hypertarget{cor-FquotientpxField}{}\label{cor-FquotientpxField}
+
+~
+
+If \(p(x)\) is an irreducible polynomial over \(F\) then
+\(F[x]/\langle p(x)\rangle\) is a field.
+
+\end{corollary}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{corollary}[p(x)\textbar a(x)b(x) implies p(x)\textbar a(x) or
+p(x)\textbar b(x)]\protect\hypertarget{cor-DividesEither}{}\label{cor-DividesEither}
+
+~
+
+\(F\) field, \(p(x),a(x),b(x) \in F[x]\) such that
+\(p(x)|a(x)b(x) ⟹ p(x)|a(x)\) or \(p(x)|b(x)\)
+
+\end{corollary}
+
+\end{tcolorbox}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[Unique Factorization in
+Z{[}x{]}]\protect\hypertarget{thm-uniqueFactorizationZx}{}\label{thm-uniqueFactorizationZx}
+
+~
+
+Every non-zero non-unit polynomial in \(Z[x]\) can be expressed as a
+product of irreducibles uniquely upto their order and the units.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+~
+
+\subsection{Divisibility in Integral
+Domains}\label{divisibility-in-integral-domains}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{definition}[Associates, Irreducibe,
+Prime]\protect\hypertarget{def-AssociatesIrreduciblePrime}{}\label{def-AssociatesIrreduciblePrime}
+
+~
+
+\begin{itemize}
+\item
+  Associates: ~ Elements \(a\) and \(b\) in integral domain \(D\) are
+  called associates if we can write \(a=bu\) for some unit \(u\) in
+  \(D\).
+\item
+  Irreducible: ~ A non-zero element \(a\) of \(D\) is said to be
+  irreducible over \(D\) if \(b,c\in D\) where \(a=bc\) implies that
+  either \(b\) or \(c\) is a unit.
+\item
+  Prime: ~ A non-zero element \(p\) is called prime if \(a\) is not a
+  unit and \(p|ab \implies p|a\) or \(p|b\).
+\end{itemize}
+
+\end{definition}
+
+\end{tcolorbox}
+
+TODO: Norm and its properties ~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[Prime implies
+Irreducible]\protect\hypertarget{thm-PrimeImpliesIrreducible}{}\label{thm-PrimeImpliesIrreducible}
+
+~
+
+In an integral domain, every prime is an irreducible.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[PID implies Irreducible equals
+Prime]\protect\hypertarget{thm-IrreducibleEqualPrimeInPID}{}\label{thm-IrreducibleEqualPrimeInPID}
+
+~
+
+In a principal ideal domain, an element is irreducible if and only if it
+is a prime.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{definition}[Unique Factorization
+Domain]\protect\hypertarget{def-UFD}{}\label{def-UFD}
+
+~
+
+An integral domain D is a unique factorization domain if
+
+\begin{itemize}
+\tightlist
+\item
+  every non zero element of D that is not a unit can be written as a
+  product of irreducibles of D; and
+\item
+  the factorization into irreducibles is unique up to associates and the
+  order in which the factor appear.
+\end{itemize}
+
+\end{definition}
+
+\end{tcolorbox}
+
+~
+
+\begin{lemma}[Ascending Chain condition for
+PID]\protect\hypertarget{lem-default}{}\label{lem-default}
+
+~
+
+In a principal ideal domain, any strictly increasing chain of ideals
+\(I_1 \subset I_2 \subset \cdots\) is finite in length.
+
+\end{lemma}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[PID implies
+UFD]\protect\hypertarget{thm-PIDimpliesUFD}{}\label{thm-PIDimpliesUFD}
+
+~
+
+Every principal ideal domain is a unique factorization domain.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{corollary}[F{[}x{]} is a
+UFD]\protect\hypertarget{cor-FisUFD}{}\label{cor-FisUFD}
+
+~
+
+Let \(F\) be a field. Then \(F[x]\) is a unique factorization domain.
+
+\end{corollary}
+
+\end{tcolorbox}
+
+~
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{definition}[Euclidean
+Domain]\protect\hypertarget{def-ED}{}\label{def-ED}
+
+~
+
+An integral domain \(D\) is called an Euclidean domain if there is a
+function (called the measure) from the nonzero elements of \(D\) to the
+nonnegative integers such that:
+
+\begin{itemize}
+\tightlist
+\item
+  \(d(a) \le d(ab)\) for all nonzero \(a,b\in D\); and
+\item
+  If \(a,b\in D, b≠ 0\), then there exist elements \(q\) and \(r\) in
+  \(D\) such that \[a = bq+r\] where \(r=0\) or \(d(r) < d(b)\)
+\end{itemize}
+
+\end{definition}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[ED implies
+PID]\protect\hypertarget{thm-EDimpliesPID}{}\label{thm-EDimpliesPID}
+
+~
+
+Every Euclidean domain is a principal ideal domain.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, arc=.35mm, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, breakable, left=2mm]
+
+\begin{theorem}[D a UFD implies D{[}x{]} a
+UFD]\protect\hypertarget{thm-default}{}\label{thm-default}
+
+~
+
+If \(D\) is a unique factorization domain, then \(D[x]\) is a unique
+factorization domain.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+
+
+
+\end{document}

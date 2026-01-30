@@ -1,0 +1,81 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "truemath"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com
+    
+
+format:
+  html:
+    theme: [cosmo, brand]
+    css: styles.css
+
+
+
+
+# This applies the filter to BOTH HTML and PDF globally
+filters:
+  - callouty-theorem
+
+# Configuration for the filter
+callouty-theorem:
+  thm:
+    override-title: false
+    callout:
+      type: tip
+      appearance: simple
+      icon: false
+  prp:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  exr:
+    override-title: false
+    callout:
+      type: tip
+      appearance: minimal
+  proof:
+    override-title: false
+    callout:
+      type: note
+      appearance: default
+      collapse: true
+      icon: false
+  solution:
+    override-title: false
+    callout:
+      type: note
+      appearance: default
+      collapse: true
+      icon: false
+  remark:
+    override-title: false
+    callout:
+      type: tip
+      appearance: minimal
+      collapse: false
+      icon: false
+  cor: 
+    override-title: false
+    callout:
+      appearance: minimal
+      icon: false
+  def:
+    override-title: false
+    callout: 
+      type: note
+      appearance: minimal
+
+  
+
+
+

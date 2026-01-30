@@ -1,0 +1,342 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{conjecture}{Conjecture}[section]
+\theoremstyle{plain}
+\newtheorem{corollary}{Corollary}[section]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Proof}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\newtheorem{refremark}{Remark}[section]
+\newtheorem{refsolution}{Solution}[section]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Post With Code},
+  pdfauthor={Harlow Malloc},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Post With Code}
+\author{Harlow Malloc}
+\date{2025-11-08}
+
+\begin{document}
+\maketitle
+
+
+This is a post with executable code.
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition (Important definition)}, leftrule=.75mm]
+
+\begin{definition}[Important
+definition]\protect\hypertarget{def-first}{}\label{def-first}
+
+A number \(a\) is called \emph{positivie} if \(a>0\).
+
+\end{definition}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacityback=0, breakable, toprule=.15mm, rightrule=.15mm, arc=.35mm, colback=white, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame]
+
+\begin{theorem}[Important
+theorem]\protect\hypertarget{thm-first}{}\label{thm-first}
+
+If \(a>b\) and \(b>c\) then \(a>c\).
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Remark (Important remark)}, leftrule=.75mm]
+
+\begin{refremark}[Important remark]
+The property in Theorem~\ref{thm-first} is called ``transitivity'\,'.
+
+\label{rem-first}
+
+\end{refremark}
+
+\end{tcolorbox}
+
+\phantomsection\label{nt-first}
+\section{Commutation relations}\label{commutation-relations}
+
+We are going to discuss now commutation relations.
+
+This example Quarto markdown file demonstrates the use of the
+\texttt{callouty-theorem} filter.
+
+\subsection{Examples}\label{examples}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacityback=0, breakable, toprule=.15mm, rightrule=.15mm, arc=.35mm, colback=white, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame]
+
+\begin{proposition}[]\protect\hypertarget{prp-pr-number}{}\label{prp-pr-number}
+
+If there exists a primitive root modulo \(n\), then there are exactly
+\(\varphi(\varphi(n))\) primitive roots modulo \(n\).
+
+\end{proposition}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacityback=0, breakable, toprule=.15mm, rightrule=.15mm, arc=.35mm, colback=white, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame]
+
+\begin{theorem}[Existence of primitive
+roots]\protect\hypertarget{thm-pr-existence}{}\label{thm-pr-existence}
+
+Primitive roots modulo \(n\) exists if and only if
+\(n = 2, 4, p^k, 2p^k\) for an odd prime \(p\) and a positive integer
+\(k\).
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof (Proof of Proposition~\ref{prp-pr-number})}, leftrule=.75mm]
+
+\begin{proof}[Proof of Proposition~\ref{prp-pr-number}]
+We note that the primitive roots modulo \(n\) is exactly the generators
+of the group of units modulo \(n\). By the hypothesis, the group of
+units modulo \(n\) is cyclic, thus having \(\varphi(\varphi(n))\)
+generators.
+\end{proof}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Remark}, leftrule=.75mm]
+
+\begin{remark}
+Group theory greatly simplifies the proof of the theorem.
+\end{remark}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacityback=0, breakable, toprule=.15mm, rightrule=.15mm, arc=.35mm, colback=white, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame]
+
+\begin{exercise}[]\protect\hypertarget{exr-quadratic-residue}{}\label{exr-quadratic-residue}
+
+Prove that the quadratic residues modulo \(p\) form a subgroup of the
+group of units modulo \(p\) of index \(2\).
+
+\end{exercise}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Solution (Solution to Exercise~\ref{exr-quadratic-residue})}, leftrule=.75mm]
+
+\begin{refsolution}[Solution to Exercise~\ref{exr-quadratic-residue}]
+Use the fact that the group of units modulo \(p\) is cyclic.
+
+\label{sol-quadratic-residue}
+
+\end{refsolution}
+
+\end{tcolorbox}
+
+\subsection{On default behaviors}\label{on-default-behaviors}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, leftrule=.75mm]
+
+\begin{corollary}[Default
+style]\protect\hypertarget{cor-default}{}\label{cor-default}
+
+If you set the metadata of a theorem type to \texttt{default}, it will
+be rendered like this.
+
+\end{corollary}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, colback=white, left=2mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, titlerule=0mm, breakable, rightrule=.15mm, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition (Default style without title)}, leftrule=.75mm]
+
+\begin{definition}[Default style without
+title]\protect\hypertarget{def-default}{}\label{def-default}
+
+\texttt{callout} can also be set to \texttt{default} in the metadata.
+
+\end{definition}
+
+\end{tcolorbox}
+
+\begin{conjecture}[As is]\protect\hypertarget{cnj-nil}{}\label{cnj-nil}
+
+Theorem types not specified in the metadata will be rendered as is.
+
+\end{conjecture}
+
+
+
+
+\end{document}

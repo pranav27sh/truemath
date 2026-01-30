@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "truemath",
+    "section": "",
+    "text": "Galois Theory - Prerequisites\n\n\n\n\n\n\n\n\n\n\n\nJan 22, 2026\n\n\nPranav Shukla\n\n\n\n\n\n\n\n\n\n\n\n\nThe Dirichlet Divisor Problem: Blogging as I Learn\n\n\n\n\n\n\n\n\n\n\n\nNov 9, 2025\n\n\nPranav Shukla\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nNov 5, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\nThis example Quarto markdown file demonstrates the use of the callouty-theorem filter."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/The Dirichlet Divisor Problem/index.html",
+    "href": "posts/The Dirichlet Divisor Problem/index.html",
+    "title": "The Dirichlet Divisor Problem: Blogging as I Learn",
+    "section": "",
+    "text": "Hello everyone! This is my first blog post here and I will be writing about the Dirichlet Divisor Problem, which is currently an open problem in number theory. The purpose of this post is to record my journey as I learn more about this problem and acquire the prerequisite mathematical tools and get familiar with related literature so that I can start exploring and investigating this problem at a more professional level.\n\nIntroduction\nI got to know about this problem for the first time when I was trying to read a research paper of a mathematics professor I was considering to cold email to. The paper was on the convolution sum of divisor function. In its introduction, it talked about the result of Ingham which established asymptotic bounds for the shifted and additive convolution sum of the divisor function. Through the reference given in that paper I accessed the original paper of Ingham which had the following results:\nThese were somewhat interesting to me and now I wanted to understand how these formulae were proven. But before proceeding further with Ingham’s paper a natural thought occurred to me, that before trying to understand the asymptotic behaviour of the convolution sum of the divisor function, I should first be familiar with the asymptotics of the divisor function. And thus I started searching online about the divisor function and somehow ended up on the Wikipedia article of the Divisor summatory function, on which I encountered the Dirichlet Divisor Problem for the first time. This was very exciting for me when I understood what the problem said, especially the list of improvements of the order of the bound by some great mathematicians"
+  },
+  {
+    "objectID": "posts/The-Dirichlet-Divisor-Problem/index.html",
+    "href": "posts/The-Dirichlet-Divisor-Problem/index.html",
+    "title": "The Dirichlet Divisor Problem: Blogging as I Learn",
+    "section": "",
+    "text": "Hello everyone! This is my first blog post here and I will be writing about the Dirichlet Divisor Problem, which is currently an open problem in number theory. The purpose of this post is to record my journey as I learn more about this problem and acquire the prerequisite mathematical tools and get familiar with related literature so that I can start exploring and investigating this problem at a more professional level, though I know this will take quite a bit of time.\n\nIntroduction\nDivisor Function: \\[d(n) = \\sum_{k|n} 1\\]\n\n\nIntroduction\nI got to know about this problem for the first time when I was trying to read a research paper of Professor Ram Murty (since I was considering to cold email to one of his co authors, Prof Biswajyoti Saha). The paper was on the convolution sum of divisor function (I will try to explain this in detail a little later). In its introduction, it talked about the result of Ingham which established asymptotic bounds for the shifted and additive convolution sum of the divisor function. Through the reference given in that paper I accessed the original paper of Ingham which had the following results:\nThese were somewhat interesting to me and now I wanted to understand how these formulae were proven. But before proceeding further with Ingham’s paper a natural thought occurred to me, that before trying to understand the asymptotic behaviour of the convolution sum of the divisor function, I should first be familiar with the asymptotics of the divisor function. And thus I started searching online about the divisor function and ended up on the Wikipedia article of the Divisor summatory function, on which I encountered the Dirichlet Divisor Problem for the first time. This was very exciting for me when I understood what the problem said. Particularly the list of improvements of the order of the bound by some great mathematicians was very inspiring. More so becuase it was again one of the many examples in mathematics of how generations of great mathematicians put their intellectual power across centuries to tackle a difficult problem at hand. Wonderful! And still there is this problem, this question whose answer no one in humanity in the past and present ‘knows’ for sure.\n\n\nHistorical Development"
+  },
+  {
+    "objectID": "posts/Galois Theory-Prerequisites/index.html",
+    "href": "posts/Galois Theory-Prerequisites/index.html",
+    "title": "Galois Theory - Prerequisites",
+    "section": "",
+    "text": "Hello everyone. I have recently decided to start with Galois Theory in view of my goal of studying Algebraic Number Theory. Now maybe I am being a bit desperate here since for Galois Theory one also needs a good bit of understanding of field theory which is a bit rusty at the moment for me. I have taken a course in introductory abstract algebra at my university in my previous semester (IIIrd sem), which was fairly basic, was taught upto ring theory, also excluding some important portions of group and ring theory. The book that was followed was Gallian. My goal in this post is to revise (and record) the key results, theorems and ideas in ring and field theory especially, which will be of prime importance for starting with Galois Theory. This will be just a collection of theorems and results and I would not include proofs of them here, as it takes much more time. Also, not having the proofs written down will allow me to try and recall the proof strategy each time I will have to convince myself of the theorem, improving my understanding of the proof in the process."
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html",
+    "href": "posts/Galois-Theory-Prerequisites/index.html",
+    "title": "Galois Theory - Prerequisites",
+    "section": "",
+    "text": "Hello everyone. I have recently decided to start with Galois Theory in view of my long term goal of studying Algebraic Number Theory. Now maybe I am being a bit desperate here since for Galois Theory one also needs a good understanding of field theory which for me, is a bit rusty at the moment. I have taken a course in introductory abstract algebra at my university in my previous semester (IIIrd sem), which was fairly basic, was taught upto ring theory, also excluding some important portions of group and ring theory. The book that was followed was Gallian. My goal in this post is to revise (and record) the key results, theorems and ideas in ring and field theory especially, which will be of prime importance for starting with Galois Theory. This will be just a collection of theorems and results and I would not include proofs of them here (maybe will add them gradually in the future), as it takes much more time. Also, not having the proofs written down will allow me to try and recall the proof strategy each time I will have to convince myself of the theorem, improving my understanding of the proof in the process.\n\n\nMy plan is that for the revision upto field theory, I will be following Gallian. After reaching there, I will switch to Dummit and Foote for the Galois Theory itself. I have also enrolled in the NPTEL course for Galois Theory this sem, which is being taught by Prof. Krishna Hanumanthu and I will be following that course closely too. Pretty excited for what lies ahead!\n\nEdit: A minor change in the plan. Will be studying field theory mainly from Dummit and Foote. Target day for completion of field theory: 3rd of Febraury"
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#section",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#section",
+    "title": "Galois Theory - Prerequisites",
+    "section": "",
+    "text": "Note - Irreducibility is a property of the polynomial as well as the integral domain or the field being considered.\n\n\nLet mk\nHello everyone. I have recently decided to start with Galois Theory in view of my goal of studying Algebraic Number Theory. Now maybe I am being a bit desperate here since for Galois Theory one also needs a good bit of understanding of field theory which is a bit rusty at the moment for me. I have taken a course in introductory abstract algebra at my university in my previous semester (IIIrd sem), which was fairly basic, was taught upto ring theory, also excluding some important portions of group and ring theory. The book that was followed was Gallian. My goal in this post is to revise (and record) the key results, theorems and ideas in ring and field theory especially, which will be of prime importance for starting with Galois Theory. This will be just a collection of theorems and results and I would not include proofs of them here, as it takes much more time. Also, not having the proofs written down will allow me to try and recall the proof strategy each time I will have to convince myself of the theorem, improving my understanding of the proof in the process. My plan is that for the revision upto field theory, I will be following Gallian. After reaching there, I will switch to Dummit and Foote for the Galois Theory itself."
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#section-1",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#section-1",
+    "title": "Galois Theory - Prerequisites",
+    "section": "",
+    "text": "Note - Irreducibility is a property of the polynomial as well as the integral domain or the field being considered.\n\n\n\n\n\n\n\nTheorem 1 (Reducibility tests for degree 2 and 3)  Let \\(F\\) be a field. If \\(f(x) \\in F[x]\\) and \\(deg\\;f(x)\\) is 2 or 3, then \\(f(x)\\) is irreducible over \\(F\\) iff it has a zero in \\(F\\).\n\n\n\n\nHello everyone. I have recently decided to start with Galois Theory in view of my goal of studying Algebraic Number Theory. Now maybe I am being a bit desperate here since for Galois Theory one also needs a good bit of understanding of field theory which is a bit rusty at the moment for me. I have taken a course in introductory abstract algebra at my university in my previous semester (IIIrd sem), which was fairly basic, was taught upto ring theory, also excluding some important portions of group and ring theory. The book that was followed was Gallian. My goal in this post is to revise (and record) the key results, theorems and ideas in ring and field theory especially, which will be of prime importance for starting with Galois Theory. This will be just a collection of theorems and results and I would not include proofs of them here, as it takes much more time. Also, not having the proofs written down will allow me to try and recall the proof strategy each time I will have to convince myself of the theorem, improving my understanding of the proof in the process. My plan is that for the revision upto field theory, I will be following Gallian. After reaching there, I will switch to Dummit and Foote for the Galois Theory itself."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#commutation-relations",
+    "href": "posts/post-with-code/index.html#commutation-relations",
+    "title": "Post With Code",
+    "section": "Commutation relations",
+    "text": "Commutation relations\nWe are going to discuss now commutation relations."
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#primitive-polynomial",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#primitive-polynomial",
+    "title": "Galois Theory - Prerequisites",
+    "section": "Primitive Polynomial",
+    "text": "Primitive Polynomial\n\nA primitive polynnomial is an element of \\(Z[x]\\) with content \\(1\\)."
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#okay",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#okay",
+    "title": "Galois Theory - Prerequisites",
+    "section": "okay",
+    "text": "okay\n okau"
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#unique-factorization-in-zx",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#unique-factorization-in-zx",
+    "title": "Galois Theory - Prerequisites",
+    "section": "",
+    "text": "Every non-zero non-unit polynomial in \\(Z[x]\\) can be expressed as a product of irreducibles uniquely upto their order and the units."
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#divisibility-in-integral-domains",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#divisibility-in-integral-domains",
+    "title": "Galois Theory - Prerequisites",
+    "section": "Divisibility in Integral Domains",
+    "text": "Divisibility in Integral Domains\n\n\n\n\n\n\nDefinition (Associates, Irreducibe, Prime)\n\n\n\n\nDefinition 3 (Associates, Irreducibe, Prime)  \n\nAssociates:   Elements \\(a\\) and \\(b\\) in integral domain \\(D\\) are called associates if we can write \\(a=bu\\) for some unit \\(u\\) in \\(D\\).\nIrreducible:   A non-zero element \\(a\\) of \\(D\\) is said to be irreducible over \\(D\\) if \\(b,c\\in D\\) where \\(a=bc\\) implies that either \\(b\\) or \\(c\\) is a unit.\nPrime:   A non-zero element \\(p\\) is called prime if \\(a\\) is not a unit and \\(p|ab \\implies p|a\\) or \\(p|b\\).\n\n\n\n\nTODO: Norm and its properties\n\n\n\n\n\n\n\nTheorem 5 (Prime implies Irreducible)  \nIn an integral domain, every prime is an irreducible.\n\n\n\n\n\n\n\n\n\n\n\nTheorem 6 (PID implies Irreducible equals Prime)  \nIn a principal ideal domain, an element is irreducible if and only if it is a prime.\n\n\n\n\n\n\n\n\n\n\nDefinition (Unique Factorization Domain)\n\n\n\n\nDefinition 4 (Unique Factorization Domain)  \nAn integral domain D is a unique factorization domain if\n\nevery non zero element of D that is not a unit can be written as a product of irreducibles of D; and\nthe factorization into irreducibles is unique up to associates and the order in which the factor appear.\n\n\n\n\n\nLemma 1 (Ascending Chain condition for PID)  \nIn a principal ideal domain, any strictly increasing chain of ideals \\(I_1 \\subset I_2 \\subset \\cdots\\) is finite in length.\n\n\n\n\n\n\n\n\nTheorem 7 (PID implies UFD)  \nEvery principal ideal domain is a unique factorization domain.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nCorollary 4 (F[x] is a UFD)  \nLet \\(F\\) be a field. Then \\(F[x]\\) is a unique factorization domain.\n\n\n\n\n\n\n\n\n\nDefinition (Euclidean Domain)\n\n\n\n\nDefinition 5 (Euclidean Domain)  \nAn integral domain \\(D\\) is called an Euclidean domain if there is a function (called the measure) from the nonzero elements of \\(D\\) to the nonnegative integers such that:\n\n\\(d(a) \\le d(ab)\\) for all nonzero \\(a,b\\in D\\); and\nIf \\(a,b\\in D, b≠ 0\\), then there exist elements \\(q\\) and \\(r\\) in \\(D\\) such that \\[a = bq+r\\] where \\(r=0\\) or \\(d(r) &lt; d(b)\\)\n\n\n\n\n\n\n\n\n\n\n\nTheorem 8 (ED implies PID)  \nEvery Euclidean domain is a principal ideal domain.\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9 (D a UFD implies D[x] a UFD)  \nIf \\(D\\) is a unique factorization domain, then \\(D[x]\\) is a unique factorization domain."
+  },
+  {
+    "objectID": "posts/Galois-Theory-Prerequisites/index.html#fx-is-a-ufd",
+    "href": "posts/Galois-Theory-Prerequisites/index.html#fx-is-a-ufd",
+    "title": "Galois Theory - Prerequisites",
+    "section": "",
+    "text": "Let \\(F\\) be a field. Then \\(F[x]\\) is a unique factorization domain."
+  }
+]

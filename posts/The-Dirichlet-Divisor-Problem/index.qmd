@@ -1,0 +1,22 @@
+---
+title: "The Dirichlet Divisor Problem: Blogging as I Learn"
+author: "Pranav Shukla"
+date: "2025-11-09"
+draft: true
+---
+
+Hello everyone! This is my first blog post here and I will be writing about the Dirichlet Divisor Problem, which is currently an open problem in number theory. The purpose of this post is to record my journey as I learn more about this problem and acquire the prerequisite mathematical tools and get familiar with related literature so that I can start exploring and investigating this problem at a more professional level, though I know this will take quite a bit of time.
+
+# Introduction
+
+Divisor Function:
+$$d(n) = \sum_{k|n} 1$$
+
+# Introduction
+
+I got to know about this problem for the first time when I was trying to read a research paper of Professor Ram Murty (since I was considering to cold email to one of his co authors, Prof Biswajyoti Saha). The paper was on the convolution sum of divisor function (I will try to explain this in detail a little later). In its introduction, it talked about the result of Ingham which established asymptotic bounds for the shifted and additive convolution sum of the divisor function. Through the reference given in that paper I accessed the original paper of Ingham which had the following results:
+
+These were somewhat interesting to me and now I wanted to understand how these formulae were proven. But before proceeding further with Ingham's paper a natural thought occurred to me, that before trying to understand the asymptotic behaviour of the convolution sum of the divisor function, I should first be familiar with the asymptotics of the divisor function. And thus I started searching online about the divisor function and ended up on the Wikipedia article of the Divisor summatory function, on which I encountered the Dirichlet Divisor Problem for the first time. This was very exciting for me when I understood what the problem said. Particularly the list of improvements of the order of the bound by some great mathematicians was very inspiring. More so becuase it was again one of the many examples in mathematics of how generations of great mathematicians put their intellectual power across centuries to tackle a difficult problem at hand. Wonderful! And still there is this problem, this question whose answer no one in humanity in the past and present 'knows' for sure.
+
+# Historical Development
+

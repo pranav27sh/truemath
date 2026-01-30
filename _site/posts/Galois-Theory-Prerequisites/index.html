@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e8d492213c47fd72ab975b72b96cef0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,10 +145,7 @@ window.Quarto = {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Galois Theory - Prerequisites</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Ring Theory</div>
-              </div>
-                  </div>
+                      </div>
   </div>
     
   
@@ -168,12 +165,6 @@ window.Quarto = {
       </div>
     </div>
     
-      <div>
-      <div class="quarto-title-meta-heading">Modified</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date-modified">January 31, 2026</p>
-      </div>
-    </div>
       
     </div>
     
@@ -183,7 +174,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="./galoisTheoryPDFCopy.pdf"><i class="bi bi-link-45deg"></i>View page as PDF</a></li></ul></div></div>
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -191,12 +182,12 @@ window.Quarto = {
 
 
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>Hello everyone. I have recently decided to start with Galois Theory in view of my long term goal of studying Algebraic Number Theory. Now maybe I am being a bit desperate here since for Galois Theory one also needs a good understanding of field theory which for me, is a bit rusty at the moment. I have taken a course in introductory abstract algebra at my university in my previous semester (IIIrd sem), which was fairly basic, was taught upto ring theory, also excluding some important portions of group and ring theory. The book that was followed was Gallian. My goal in this post is to revise (and record) the key results, theorems and ideas in ring and field theory especially, which will be of prime importance for starting with Galois Theory. This will be just a collection of theorems and results and I would not include proofs of them here (maybe will add them gradually in the future), as it takes much more time. Also, not having the proofs written down will allow me to try and recall the proof strategy each time I will have to convince myself of the theorem, improving my understanding of the proof in the process.</p>
-<section id="the-plan" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="the-plan">The Plan</h4>
-<p>My plan is that for the revision upto field theory, I will be following Gallian. After reaching there, I will switch to Dummit and Foote for the Galois Theory itself. I have also enrolled in the NPTEL course for Galois Theory this sem, which is being taught by Prof.&nbsp;Krishna Hanumanthu and I will be following that course closely too (Link of the playlist <a href="https://youtube.com/playlist?list=PLyqSpQzTE6M94LuHxxu4OrViX4K45oH73&amp;si=-fRFCp29_IdCycR3">here</a>). Pretty excited for what lies ahead!</p>
+<section id="the-plan" class="level4">
+<h4 class="anchored" data-anchor-id="the-plan">The Plan</h4>
+<p>My plan is that for the revision upto field theory, I will be following Gallian. After reaching there, I will switch to Dummit and Foote for the Galois Theory itself. I have also enrolled in the NPTEL course for Galois Theory this sem, which is being taught by Prof.&nbsp;Krishna Hanumanthu and I will be following that course closely too. Pretty excited for what lies ahead!</p>
 <ul>
 <li>Edit: A minor change in the plan. Will be studying field theory mainly from Dummit and Foote. Target day for completion of field theory: <strong>3rd of Febraury</strong></li>
 </ul>
@@ -204,17 +195,21 @@ window.Quarto = {
 </section>
 <section id="ring-theory" class="level1">
 <h1>RING THEORY</h1>
-<section id="factorization-of-polynomials" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="factorization-of-polynomials">Factorization of Polynomials</h3>
+<section id="factorization-of-polynomials" class="level3">
+<h3 class="anchored" data-anchor-id="factorization-of-polynomials">Factorization of Polynomials</h3>
 <p>&nbsp;</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-irreducible" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Irreducible element)</strong></span> &nbsp;</p>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-default" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> &nbsp;</p>
 <ul>
 <li><p><strong>In Integral Domains:</strong> Let <span class="math inline">\(D\)</span> be an integral domain. A polynomial <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(D[x]\)</span> which is a non zero and non unit in <span class="math inline">\(D[x]\)</span> is said to be <strong>irreducible</strong> <em>over</em> <span class="math inline">\(D\)</span> if <span class="math inline">\(f(x) = g(x)h(x)\)</span>, where <span class="math inline">\(g(x) \; and \; h(x)\)</span> are in <span class="math inline">\(D[x]\)</span> implies that either <span class="math inline">\(g(x) \; or \; f(x)\)</span> is a unit. A non-zero non unit polynomial in <span class="math inline">\(D[x]\)</span> is said to be reducible if it is not irreducible over <span class="math inline">\(D[x]\)</span>.</p></li>
 <li><p><strong>In Fields:</strong> Let <span class="math inline">\(F\)</span> be a field. Then <span class="math inline">\(f(x)\)</span>, a non-zero non unit element in <span class="math inline">\(F[x]\)</span>, is irreducible over <span class="math inline">\(F\)</span> if there exist <span class="math inline">\(g(x) \; and \; h(x)\)</span> in <span class="math inline">\(F[x]\)</span> such that <span class="math inline">\(f(x) = g(x)h(x)\)</span> implies that <span class="math inline">\(deg\;h(x) &lt; deg\;f(x) \; and\; deg\;g(x) &lt; deg\;f(x)\)</span>.</p></li>
@@ -222,13 +217,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span></p>
 <ul>
@@ -239,13 +239,16 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Definition (Content of a polynomial, Primitive polynomial)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-default" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Content of a polynomial, Primitive polynomial)</strong></span> <br></p>
 <ul>
@@ -255,8 +258,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -269,8 +271,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -284,21 +285,23 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="cor-IrreducibiltyCyclotomic" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 1 (Irreducibility of pth Cyclotomic Polynomial)</strong></span> &nbsp;</p>
 <p>For any prime <span class="math inline">\(p\)</span>, the pth cyclotomic polynomial <span class="math display">\[\Phi_{p}(x) = \frac{x^p-1}{p-1} = x^p + x^{p-1} + \cdots + 1\]</span> ir irreducible over <span class="math inline">\(Q\)</span>.</p>
 </div>
 </div>
 </div>
-</div>
-<p>&nbsp;</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -311,34 +314,39 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="cor-FquotientpxField" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 2 (F[x]/&lt;p(x)&gt; is a Field)</strong></span> &nbsp;</p>
 <p>If <span class="math inline">\(p(x)\)</span> is an irreducible polynomial over <span class="math inline">\(F\)</span> then <span class="math inline">\(F[x]/\langle p(x)\rangle\)</span> is a field.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="cor-DividesEither" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 3 (p(x)|a(x)b(x) implies p(x)|a(x) or p(x)|b(x))</strong></span> &nbsp;</p>
 <p><span class="math inline">\(F\)</span> field, <span class="math inline">\(p(x),a(x),b(x) \in F[x]\)</span> such that <span class="math inline">\(p(x)|a(x)b(x) ⟹ p(x)|a(x)\)</span> or <span class="math inline">\(p(x)|b(x)\)</span></p>
 </div>
 </div>
 </div>
-</div>
-<p>&nbsp;</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -351,16 +359,19 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
 </section>
 <section id="divisibility-in-integral-domains" class="level2">
 <h2 class="anchored" data-anchor-id="divisibility-in-integral-domains">Divisibility in Integral Domains</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Definition (Associates, Irreducibe, Prime)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-AssociatesIrreduciblePrime" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 3 (Associates, Irreducibe, Prime)</strong></span> &nbsp;</p>
 <ul>
@@ -371,9 +382,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<p>TODO: Norm and its properties &nbsp;</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>TODO: Norm and its properties</p>
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -386,7 +396,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -399,13 +409,16 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Definition (Unique Factorization Domain)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-UFD" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4 (Unique Factorization Domain)</strong></span> &nbsp;</p>
 <p>An integral domain D is a unique factorization domain if</p>
@@ -416,13 +429,11 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<p>&nbsp;</p>
 <div id="lem-default" class="theorem lemma">
 <p><span class="theorem-title"><strong>Lemma 1 (Ascending Chain condition for PID)</strong></span> &nbsp;</p>
 <p>In a principal ideal domain, any strictly increasing chain of ideals <span class="math inline">\(I_1 \subset I_2 \subset \cdots\)</span> is finite in length.</p>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -435,26 +446,32 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="cor-FisUFD" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 4 (F[x] is a UFD)</strong></span> &nbsp;</p>
 <p>Let <span class="math inline">\(F\)</span> be a field. Then <span class="math inline">\(F[x]\)</span> is a unique factorization domain.</p>
 </div>
 </div>
 </div>
-</div>
-<p>&nbsp;</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Definition (Euclidean Domain)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-ED" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 5 (Euclidean Domain)</strong></span> &nbsp;</p>
 <p>An integral domain <span class="math inline">\(D\)</span> is called an Euclidean domain if there is a function (called the measure) from the nonzero elements of <span class="math inline">\(D\)</span> to the nonnegative integers such that:</p>
@@ -465,8 +482,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -479,7 +495,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -492,11 +508,6 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<!-- ::: {#thm-pythagoras title="Pythagoras Theorem"}
- 
-
-In a right angled triangle with sides of length $a,b$ and hypotenuse $c$, we have the relation $a^2+b^2 = c^2$
-::: -->
 
 
 </section>
